@@ -347,7 +347,8 @@ public class XListView extends ListView implements OnScrollListener {
                     updateHeaderHeight(deltaY / OFFSET_RADIO);
                     invokeOnScrolling();
 
-                } else if (getLastVisiblePosition() == mTotalItemCount - 1 && (mFooterView
+                }
+	            if (getLastVisiblePosition() == mTotalItemCount - 1 && (mFooterView
                         .getBottomMargin() > 0 || deltaY < 0)) {
                     // last item, already pulled up or want to pull up.
                     updateFooterHeight(-deltaY / OFFSET_RADIO);
@@ -367,7 +368,8 @@ public class XListView extends ListView implements OnScrollListener {
 
                     resetHeaderHeight();
 
-                } else if (getLastVisiblePosition() == mTotalItemCount - 1) {
+                }
+	            if (getLastVisiblePosition() == mTotalItemCount - 1) {
                     // invoke load more.
                     if (mEnablePullLoad && mFooterView.getBottomMargin() > PULL_LOAD_MORE_DELTA) {
                         startLoadMore();
